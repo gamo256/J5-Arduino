@@ -1,0 +1,17 @@
+var five = require("johnny-five");
+var board = new five.Board();
+
+board.on("ready", function() {
+  // Relaysオブジェクトのコレクションを作成
+  // (9,10ピンをリレー制御用に設定)
+  var relays = new five.Relays([{
+    pin: 9,
+    type: "NC",
+    }, {
+    pin: 10,
+    type: "NC",
+  }]);
+
+  // インデックス「0」(9ピン)のリレー回路を閉じる
+  relays[0].close();
+});
