@@ -9,7 +9,7 @@ board.on("ready", function() {
   });
 
   // データ取得
-  alt.on("change", function() {
+  alt.on("data", function() {
     console.log("altimeter");
     console.log("  feet         : ", this.feet);
     console.log("  meters       : ", this.meters);
